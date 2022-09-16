@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.micol.prj.common.Command;
+import co.micol.prj.member.command.AjaxMemberIdCheck;
 import co.micol.prj.member.command.MemberJoinForm;
 import co.micol.prj.member.command.MemberSelect;
 import co.micol.prj.member.command.MemberSelectList;
@@ -38,6 +39,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memberSelect.do", new MemberSelect()); // 멤버 상세 조회.
 		map.put("/memberJoinForm.do", new MemberJoinForm()); // 멤버 입력 화면
 		map.put("/memberInsert.do", new memberInsert()); // 멤버 입력 처리
+		map.put("/ajaxMemberIdCheck.do", new AjaxMemberIdCheck()); // 아이디 중복체크
 		
 	}
 
@@ -57,12 +59,17 @@ public class FrontController extends HttpServlet {
 		String viewPage = command.exec(request, response); // Command를 실행하고 돌려줄 페이지를 받음.
 		
 		if(!viewPage.endsWith(".do")) {
-			viewPage = "/WEB-INF/views/" + viewPage + ".jsp";
+			if(!viewPage.startsWith("ajax:")) {
+				response.setContentType("text/html; charset=UTF-8");
+				response.getWriter().append(viewPage.substring(5));
+			}else { // 리턴값이 보여줄 페이지를 가지고 올떄
+				viewPage = "/WEB-INF/views/" +  viewPage + "jsp";
+				RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+				dispatcher.forward(request, response);
+			}
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-			dispatcher.forward(request, response);
 		} else {
-			response.sendRedirect(viewPage);
+			response.sendRedirect(viewPage); // 리턴값이 *.do로 올떄 처리
 		}
 	}
 

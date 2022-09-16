@@ -82,12 +82,12 @@
 	
 	function idChek() { //Ajax를 이용해서 id 중복체크를 한다.
 		let id = document.getElementById("memberId").value;
-		
+	/*	
 		const xhttp = new XMLHttpRequest();
 		xhttp.onload = function() {
-			if (this.readyState == 4 && this.status == 200){
-				if(this.responseText == '1'){
-					alert("아이디체크");
+			if (this.readyState == 4 && this.status == 200){ // 삭제여부
+				responseResult(this.response){
+				
 					document.getElementById("btn").value = "Yes";
 					document.getElementById("memberPassword").focus();
 					
@@ -98,9 +98,29 @@
 				}
 			}
 		}
-		xhttp.open("GET", "ajaxMemberIdCheck.do?id="+id);
-		xhttp.send();
 		
+		xhttp.open("GET", "ajaxMemberIdCheck.do?id="+id");
+		xhttp.send();
+		*/
+		//fetch를 사용한 ajax
+		
+		fetch('ajaxMemberIdCheck.do?id='+id)
+			.then(response => response.text()); // 이곳에 Call Back함수를 작성하면 됨
+			.then(data => result(data));
+		
+	}
+	
+	function result(data) { // fetch처리 Callback 함수
+		if(this.responseText == '1'){
+			alert("아이디체크");
+			document.getElementById("btn").value = "Yes";
+			document.getElementById("memberPassword").focus();
+			
+		}else{
+			alert("사용할수 없는 아이디 입니다.");
+			document.getElementById("memberId").value = "";
+			document.getElementById("memberId").focus();
+		}
 	}
 	</script>
 </body>
