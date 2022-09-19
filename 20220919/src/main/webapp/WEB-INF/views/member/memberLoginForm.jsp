@@ -7,33 +7,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div align = "center">
-	<div><jsp:include page ="../menu/menu.jsp" /></div>
-	<div>
-		<div><h1>로 그 인</h1></div>
-		<div>
-			<form id="frm" action="memberLogin.do" method="post">
-			
-			<table border="1">
-				<tr>
-					<th width ="100">아이디</th>
-					<td width ="150">
-						<input type="text" id="memberId" name="memberId" required="required">
-					</td>
-				</tr>
-				
-				<tr>
-					<th>패스워드</th>
-					<td>
-						<input type ="password" id=meberPassword name=memberPass], required = "required">
-					</td>
-				</tr>
-				
-				
-			</table>
-			</form>
-		</div>
+	<div align="center">
+		<div><jsp:include page="../menu/menu.jsp" /></div>
+		<div><h1>로그인</h1></div>
+		<form id="frm" action="memberLogin.do" method="post">
+			<div>
+				<table border="1">
+					<tr>
+						<th>아이디</th>
+						<td><input type="text" id="memberId" name="memberId" required="required"></td>				
+					</tr>
+					<tr>
+						<th>비밀번호</th>
+						<td><input type="text" id="memberPassword" name="memberPassword" required="required"></td>
+					</tr>
+				</table>
+			</div><br>
+			<div>
+				<input type="submit" value="로그인">
+				<input type="reset" value="취소">
+			</div>
+		</form>
 	</div>
-</div>
 </body>
 </html>

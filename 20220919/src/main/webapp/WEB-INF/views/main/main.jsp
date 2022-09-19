@@ -8,7 +8,7 @@
 </head>
 <body>
 <div align="center">
-	<div>
+	<div align ="center">
 	<jsp:include page="../menu/menu.jsp" /></div>
 	<div><h1>Go to Hell!</h1></div>
 	<div>
