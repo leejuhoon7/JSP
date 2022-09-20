@@ -16,6 +16,9 @@ import co.micol.prj.common.Command;
 import co.micol.prj.member.command.MemberLogin;
 import co.micol.prj.member.command.MemberLoginForm;
 import co.micol.prj.member.command.MemberLogout;
+import co.micol.prj.notice.command.NoticeDelete;
+import co.micol.prj.notice.command.NoticeEdit;
+import co.micol.prj.notice.command.NoticeEditForm;
 import co.micol.prj.notice.command.NoticeInsert;
 import co.micol.prj.notice.command.NoticeSelect;
 import co.micol.prj.notice.command.NoticeSelectList;
@@ -38,6 +41,9 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeWriteForm.do", new NoticeWriteForm());
 		map.put("/noticeInsert.do", new NoticeInsert());
 		map.put("/noticeSelect.do", new NoticeSelect());
+		map.put("/noticeEditForm.do", new NoticeEditForm()); // 게시글 수정
+		map.put("/noticeEdit.do", new NoticeEdit());
+		map.put("/noticeDelete", new NoticeDelete());
 		map.put("/memberLoginForm.do", new MemberLoginForm()); // 로그인 폼 호출
 		map.put("/memberLogin.do", new MemberLogin()); // 로그인
 		map.put("/memberLogout.do", new MemberLogout()); // 로그아웃
@@ -55,19 +61,22 @@ public class FrontController extends HttpServlet {
 		String viewPage = command.exec(request, response);
 
 		if (!viewPage.endsWith(".do")) {
-			if (viewPage.startsWith("ajax:")) {
+			if (viewPage.startsWith("ajax:")) { // ajax를 사용할 떄
 				response.setContentType("text/html; charset-UTF-8");
 				response.getWriter().append(viewPage.substring(5));
 				return;
 			} else {
-				viewPage = "WEB-INF/views/" + viewPage + ".jsp";
-				
-				RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-				dispatcher.forward(request, response);
+				if (viewPage.startsWith("no:")) { // tiles 적용 안할때
+					viewPage = "WEB-INF/views/" + viewPage.substring(3) + ".jsp";
+				} else {
+					viewPage = viewPage + ".titles"; // titles layout 사용
+					RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+					dispatcher.forward(request, response);
+				}
 			}
 
 		} else {
-			response.sendRedirect(viewPage);
+			response.sendRedirect(viewPage); //.do return
 		}
 	}
 

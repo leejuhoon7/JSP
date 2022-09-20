@@ -8,13 +8,7 @@
 </head>
 <body>
 <div align="center">
-	<div align ="center">
-	
-	<div><h1>Go to Hell!</h1></div>
-	<div>
-		<br> 
-	<img src="img/gom.jpg" width = "600px" height = "400px">
-	</div>
+	<h1>My WebSite @CopyWrite by Lee 2022.09.20</h1>
 </div>
 </body>
 </html>

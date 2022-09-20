@@ -14,12 +14,12 @@ td {
 </head>
 <body>
 	<div align="center">
-		<div><jsp:include page="../menu/menu.jsp" /></div>
+		
 		<div>
 			<h1>게시글 목록</h1>
 		</div>
 		<div>
-			<table>
+			<table border="1">
 				<thead>
 					<tr>
 						<th width="70">글번호</th>
@@ -31,13 +31,13 @@ td {
 					</tr>
 				<thead>
 				<tbody>
-					<c:if test="${empty list}">
+					<c:if test="${empty lists}">
 						<tr>
 							<td colspan="6">게시글이 존재하지 않습니다.</td>
 						</tr>
 					</c:if>
-					<c:if test="${not empty list}">
-						<c:forEach items="${list}" var="notice">
+					<c:if test="${not empty lists}">
+						<c:forEach items="${lists}" var="notice">
 							<tr onMouseover="this.style.backgroundColor='yellow';"
 								onMouseout="this.style.backgroundColor='white';"
 								onclick="selectNotice('${notice.noticeId}')">
