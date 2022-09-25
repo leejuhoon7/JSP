@@ -6,14 +6,17 @@ import java.util.HashMap;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.jtrip.common.Command;
 import co.jtrip.main.Main;
+import co.jtrip.mypage.command.Mypage;
 
 
+@WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private HashMap<String, Command> map = new HashMap<String, Command>();  
@@ -26,6 +29,8 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// 명령 집단 저장하는 곳
 		map.put("/main.do", new Main());
+		map.put("/mypage.do", new Mypage());
+		
 	}
 
 
@@ -40,6 +45,7 @@ public class FrontController extends HttpServlet {
 		Command command = map.get(page);
 		String viewPage = command.exec(request, response);
 		
+		System.out.println(viewPage);
 		if (!viewPage.endsWith(".do")) { 							
 			if (viewPage.startsWith("ajax:")) { 					
 				response.setContentType("text/html; charset=UTF-8");

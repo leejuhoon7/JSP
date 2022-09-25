@@ -8,5 +8,6 @@
 </head>
 <body>
 시작하는 페이지입니다.
+<a href="mypage.do">마이페이지</a>
 </body>
 </html>
