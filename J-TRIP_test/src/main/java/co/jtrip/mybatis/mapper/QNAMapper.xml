@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.jtrip.mybatis.mapper.QNAMapper">
+
+	<select id="QNASelectList"
+		resultType="co.jtrip.qna.command.QNASelectList">
+		SELECT *
+		FROM MEMBER M, QNA Q
+		WHERE M.MEMBER_ID = Q.MEMBER_ID;
+
+	</select>
+
+	<select id="QNASelect"
+		resultType="co.jtrip.qna.command.QNASelect">
+		SELECT * FROM WHERE MEMBER_ID; <!-- ?? select에 sql문 어떻게 넣어야할까?? -->
+
+
+	</select>
+
+
+
+
+
+</mapper>
+
+
+
+	
+

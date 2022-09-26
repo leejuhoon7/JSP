@@ -9,38 +9,20 @@
 </head>
 <body>
 
-	<div align="center">
-		
-			<form id="frm" action="mypage.do" method="post">
-			<div>
-				<table border="1">
-					<tr>
-						<th>아이디</th>
-						<td><input type="text" name = "memberId"></td>
-						<th>비밀번호</th>
-						<td>${vo.memberPassword}</td>
-						<th>이름</th>
-						<td>${vo.memberName}</td>
-						<th>주소</th>
-						<td>${vo.memberAddress}</td>
-						<td><input type="text" id="memberAddress"
-							name="memberAddress" required="required"></td>
-						<th>이메일</th>
-						<td>${vo.memberEmail}</td>
-						<td><input type="text" id="memberEmail" name="memberEmail"
-							required="required"></td>
-						<th>전화번호</th>
-						<td>${vo.memberTel}</td>
-						<td><input type="text" id="memberTel" name="memberTel"
-							required="required"></td>
-					</tr>
-				</table>
-		</div>
-		<input type="submit" value="수정하기"> <input type="reset"
-			value="취소">
 
-		</form>
-	</div>
+
+
+
+	<nav id="topMenu">
+		<ul>
+			<li><a class="menuLink" href="main.do">Home</a></li>
+			<li><a class="menuLink" href="productInsertForm.do">1:1게시판문의</a></li>
+			<li><a class="menuLink" href="productSelectList.do">회원정보수정</a></li>
+			<li><a class="menuLink" href="productSelectList.do">나의리뷰내역</a></li>
+			<li><a class="menuLink" href="productSelectList.do">결제내역</a></li>
+
+		</ul>
+	</nav>
 
 </body>
 </html>

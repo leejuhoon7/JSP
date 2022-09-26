@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.jtrip.mybatis.mapper.ReservationMapper">
+
+<select id="ReservationSelectList"
+		resultType="co.jtrip.reservation.command.ReservationSelectList">
+		SELECT *
+		FROM MEMBER M, RESERVAITON R
+		WHERE M.MEMBER_ID = R.MEMBER_ID;
+
+	</select>
+
+	<select id="ReservationSelect"
+		resultType="co.jtrip.reservation.command.ReservationSelect">
+		SELECT * FROM WHERE MEMBER_ID; <!-- ?? select에 sql문 어떻게 넣어야할까?? -->
+
+
+	</select>
+
+</mapper>
