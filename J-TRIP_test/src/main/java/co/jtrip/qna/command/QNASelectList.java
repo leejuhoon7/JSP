@@ -19,9 +19,11 @@ public class QNASelectList implements Command {
 
 		QNAService dao = new QNAServiceImpl();
 		list = dao.QNASelectList();
+		
+		System.out.println(list);
 		request.setAttribute("list", list);
 		
-		return "QNA/QNASelectList";
+		return "mypage/QNASelectList";
 		
 	}
 
