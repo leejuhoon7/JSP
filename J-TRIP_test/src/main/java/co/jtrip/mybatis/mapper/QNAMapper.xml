@@ -4,16 +4,20 @@
 
 	<select id="QNASelectList"
 		resultType="co.jtrip.qna.command.QNASelectList">
-		SELECT *
-		FROM MEMBER M, QNA Q
+		SELECT Q.QNA_NO, Q.QNA_TITLE, M.MEMBER_ID, Q.QNA_DATE
+		FROM
+		MEMBER M, QNA Q
 		WHERE M.MEMBER_ID = Q.MEMBER_ID;
 
 	</select>
 
 	<select id="QNASelect"
 		resultType="co.jtrip.qna.command.QNASelect">
-		SELECT * FROM WHERE MEMBER_ID; <!-- ?? select에 sql문 어떻게 넣어야할까?? -->
-
+		SELECT M.MEMBER_ID, M.MEMBER_NAME, Q.QNA_TITLE, Q.QNA_NO,
+		Q.QNA_DATE,
+		Q.QNA_CONTENT
+		FROM MEMBER M, QNA Q
+		WHERE M.MEMBER_ID = Q.MEMBER_ID;
 
 	</select>
 

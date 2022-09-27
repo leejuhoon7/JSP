@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import co.jtrip.common.Command;
 import co.jtrip.main.Main;
 import co.jtrip.mypage.command.MypageUpdate;
+import co.jtrip.notice.command.NoticeSelect;
+import co.jtrip.notice.command.NoticeSelectList;
+import co.jtrip.notice.service.noticeSelectList;
 import co.jtrip.qna.command.QNASelect;
 import co.jtrip.qna.command.QNASelectList;
 import co.jtrip.reservation.command.ReservationSelect;
@@ -41,6 +44,8 @@ public class FrontController extends HttpServlet {
 		map.put("/reviewSelect.do", new ReviewSelect());
 		map.put("/reservationSelectList.do", new ReservationSelectList());
 		map.put("/reservationSelect.do", new ReservationSelect());
+		map.put("/noticeSelectList.do", new NoticeSelectList());
+		map.put("/noticeSelect.do", new NoticeSelect());
 
 	}
 
@@ -52,6 +57,7 @@ public class FrontController extends HttpServlet {
 		String uri = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String page = uri.substring(contextPath.length());
+		System.out.println(page);
 
 		Command command = map.get(page);
 		String viewPage = command.exec(request, response);
