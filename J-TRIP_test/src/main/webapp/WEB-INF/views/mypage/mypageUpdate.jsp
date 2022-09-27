@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>비밀번호 확인</h2>
+
 
 </body>
 </html>

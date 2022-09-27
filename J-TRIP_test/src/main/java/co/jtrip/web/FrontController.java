@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.jtrip.common.Command;
 import co.jtrip.main.Main;
-import co.jtrip.mypage.command.MypageUpdate;
-import co.jtrip.notice.command.NoticeSelect;
-import co.jtrip.notice.command.NoticeSelectList;
-import co.jtrip.notice.service.noticeSelectList;
+import co.jtrip.member.command.MemberInsert;
+import co.jtrip.member.command.MemberSelectList;
+import co.jtrip.member.command.MemberUpdate;
+import co.jtrip.member.command.MemberUpdateForm;
 import co.jtrip.qna.command.QNASelect;
 import co.jtrip.qna.command.QNASelectList;
 import co.jtrip.reservation.command.ReservationSelect;
@@ -37,15 +37,18 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// 명령 집단 저장하는 곳
 		map.put("/main.do", new Main());
-		map.put("/mypageupdate.do", new MypageUpdate());
-		map.put("/QNASelectList.do", new QNASelectList());
-		map.put("/QNASelect.do", new QNASelect());
+		map.put("/memberSelectList.do", new MemberSelectList()); // 마이페이지 정보불러오기
+		map.put("/memberInsert.do", new MemberInsert()); // 마이페이지 정보추가
+		map.put("/memberUpdate.do", new MemberUpdate()); // 마이페이지 정보수정
+		map.put("/memberUpdateForm.do", new MemberUpdateForm()); // 마이페이지 정보수정
+		map.put("/qnaSelectList.do", new QNASelectList());
+		map.put("/qnaSelect.do", new QNASelect());
 		map.put("/reviewSelectList.do", new ReviewSelectList());
 		map.put("/reviewSelect.do", new ReviewSelect());
 		map.put("/reservationSelectList.do", new ReservationSelectList());
 		map.put("/reservationSelect.do", new ReservationSelect());
-		map.put("/noticeSelectList.do", new NoticeSelectList());
-		map.put("/noticeSelect.do", new NoticeSelect());
+		
+
 
 	}
 
