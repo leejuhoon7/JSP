@@ -19,6 +19,7 @@ public class DataSource {
       }catch(Exception e) {
          e.printStackTrace();
       }
+      System.out.println("연결체크");
       return sqlSessionFactory;
    }
 }

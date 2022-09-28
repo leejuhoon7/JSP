@@ -10,5 +10,5 @@ public interface QNAMapper {
 	List<QNAVO> QNASelectList();
 
 	QNAVO QNASelect(QNAVO vo);
-
+	
 }

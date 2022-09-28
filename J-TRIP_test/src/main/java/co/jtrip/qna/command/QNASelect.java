@@ -23,6 +23,6 @@ public class QNASelect implements Command {
 			dao.QNASelect(vo);
 			request.setAttribute("vo", resultVO);
 		}
-		return "QNA/QNASelect";
+		return "mypage/QNASelect";
 	}
 }

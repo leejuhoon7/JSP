@@ -3,21 +3,22 @@
 <mapper namespace="co.jtrip.mybatis.mapper.QNAMapper">
 
 	<select id="QNASelectList"
-		resultType="co.jtrip.qna.command.QNASelectList">
-		SELECT Q.QNA_NO, Q.QNA_TITLE, M.MEMBER_ID, Q.QNA_DATE
-		FROM
-		MEMBER M, QNA Q
-		WHERE M.MEMBER_ID = Q.MEMBER_ID;
+		resultType="co.jtrip.qna.service.QNAVO">
+		SELECT MEMBER_ID, QNA_NO, QNA_TITLE,
+		QNA_DATE
+		FROM QNA 
+		WHERE MEMBER_ID = 'test'
 
 	</select>
 
 	<select id="QNASelect"
-		resultType="co.jtrip.qna.command.QNASelect">
+		resultType="co.jtrip.qna.service.QNAVO">
 		SELECT M.MEMBER_ID, M.MEMBER_NAME, Q.QNA_TITLE, Q.QNA_NO,
 		Q.QNA_DATE,
 		Q.QNA_CONTENT
 		FROM MEMBER M, QNA Q
-		WHERE M.MEMBER_ID = Q.MEMBER_ID;
+		WHERE M.MEMBER_ID =
+		Q.MEMBER_ID
 
 	</select>
 

@@ -16,12 +16,13 @@ public class QNASelectList implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		List<QNAVO> list = new ArrayList<>();
-
+		System.out.println("리스트체크");
 		QNAService dao = new QNAServiceImpl();
 		list = dao.QNASelectList();
+		System.out.println("리스트: "+list);
 		request.setAttribute("list", list);
 		
-		return "QNA/QNASelectList";
+		return "mypage/QNASelectList";
 		
 	}
 
