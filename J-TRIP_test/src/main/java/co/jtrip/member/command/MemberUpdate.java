@@ -22,9 +22,7 @@ public class MemberUpdate implements Command {
 				vo.setMemberAddress(request.getParameter("memberAddress"));
 				vo.setMemberEmail(request.getParameter("memberEmail"));
 				vo.setMemberTel(request.getParameter("memberTel"));
-				
-				System.out.println(vo);
-				
+								
 				dao.memberUpdate(vo);
 				return "member/memberSelectList";
 	}

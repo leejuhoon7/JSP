@@ -4,13 +4,18 @@
 
 	<select id="QNASelectList"
 		resultType="co.jtrip.qna.service.QNAVO">
+<<<<<<< HEAD
 		SELECT MEMBER_ID, QNA_NO, QNA_TITLE,
 		QNA_DATE
 		FROM QNA 
 		WHERE MEMBER_ID = 'test'
+=======
+		SELECT * FROM QNA
+>>>>>>> branch 'master' of https://github.com/leejuhoon7/JSP.git
 
 	</select>
 
+<<<<<<< HEAD
 	<select id="QNASelect"
 		resultType="co.jtrip.qna.service.QNAVO">
 		SELECT M.MEMBER_ID, M.MEMBER_NAME, Q.QNA_TITLE, Q.QNA_NO,
@@ -19,11 +24,14 @@
 		FROM MEMBER M, QNA Q
 		WHERE M.MEMBER_ID =
 		Q.MEMBER_ID
+=======
+	<select id="QNASelect" resultType="co.jtrip.qna.service.QNAVO">
+		select MEMBER_ID, QNA_NO,
+		QNA_TITLE, QNA_CONTENT
+		FROM QNA;
+>>>>>>> branch 'master' of https://github.com/leejuhoon7/JSP.git
 
 	</select>
-
-
-
 
 
 </mapper>

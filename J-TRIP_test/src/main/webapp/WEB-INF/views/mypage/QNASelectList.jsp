@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,51 +16,38 @@
 			<table>
 				<thead>
 					<tr>
-						<th width="150">작성자ID</th>
-						<th width="150">이름</th>
 						<th width="150">순번</th>
 						<th width="150">제목</th>
+						<th width="150">이름</th>
+						<th width="150">내용</th>
 						<th width="150">날짜</th>
 					</tr>
-				<thead>
-				<tbody>
-					<c:if test="${empty list}">
-						<tr>
-							<td colspan="6">게시글이 존재하지 않습니다.</td>
+				</thead>
+
+				<tbody style="text-align: center;">
+					<c:forEach items="${list }" var="q">
+						<tr onMouseover="this.style.backgroundColor='yellow';"
+							onMouseout="this.style.backgroundColor='white';"
+							onclick="selectMember('${q.memberId }')">
+							
+							<td>${q.QNANo }</td>
+							<td>${q.QNATitle }</td>
+							<td>${q.memberId }</td>
+							<td>${q.QNAContent }</td>
+							<td>${q.QNADate }</td>
 						</tr>
-					</c:if>
-					<c:if test="${not empty list}">
-						<c:forEach items="${list}" var="notice">
-							<tr onMouseover="this.style.backgroundColor='yellow';"
-								onMouseout="this.style.backgroundColor='white';"
-								onclick="selectNotice('${notice.noticeId}')">
-								<td>${notice.noticeId}</td>
-								<td>${notice.noticeTitle}</td>
-								<td>${notice.noticeWriter}</td>
-								<td>${notice.noticeDate}</td>
-								<td>${notice.noticeAttech}</td>
-								<td>${notice.noticeHit}</td>
-							</tr>
-						</c:forEach>
-					</c:if>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>
 		<br>
 		<div>
-			<form id="frm" action="noticeSelect.do" method="post">
-				<input type="hidden" id="id" name="id">
-				<c:if test="${not empty id}">
-					<button type="button" onclick="location.href='noticeWriteForm.do'">글쓰기</button>
-				</c:if>
+			<form id="frm" method="post">
+				<input type="hidden" id="memberId" name="memberId">
 			</form>
 		</div>
+
 	</div>
-	<script type="text/javascript">
-		function selectNotice(id) {
-			document.getElementById("id").value = id
-			frm.submit();
-		}
-	</script>
+
 </body>
-</html>
+</html>		

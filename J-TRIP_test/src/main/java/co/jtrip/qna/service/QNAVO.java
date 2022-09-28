@@ -9,10 +9,11 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+
 public class QNAVO {
 
 	private String memberId;
-	private String QNANO;
+	private String QNANo;
 	private String QNATitle;
 	private Date QNADate;
 	private String QNAContent;
