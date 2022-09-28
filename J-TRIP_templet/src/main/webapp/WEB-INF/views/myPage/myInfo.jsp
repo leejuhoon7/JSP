@@ -88,8 +88,11 @@ body {
 							<h3 class="h6 mb-4"></h3>
 							<div class="mb-3">
 
+
 								<label class="form-label">USER ID *</label> <input type="text"
 									id="memberId" value="${vo.memberId}" required="required">
+
+
 							</div>
 							<span class="select2-selection__arrow" role="presentation"><b
 								role="presentation"></b></span><span class="dropdown-wrapper"
@@ -98,16 +101,17 @@ body {
 								<label class="form-label">NAME *</label> <input type="text"
 									id="memberName" value="${vo.memberName}" required="required">
 							</div>
-							<span class="select2-selection__arrow" role="presentation"><b
-								role="presentation"></b></span><span class="dropdown-wrapper"
-								aria-hidden="true"></span>
+							
 							<div class="mb-3" style="margin-bottom: 50px">
-								<label class="form-label">PassWord *</label> <input type="text"
-									class="form-control" placeholder="패스워드를 입력해주세요"><input
+								<label class="form-label">PassWord *</label> <input
 									type="text" id="memberPw" value="${vo.memberPassword }"
-									required="required"> placeholder="패스워드를 다시 한번 입력해주세요">
-								<input type="text" id="memberPw" value="${vo.memberPassword }"
-									required="required">
+									required="required" placeholder="비밀번호 입력">
+							</div>
+
+							<div class="mb-3" style="margin-bottom: 50px">
+								<label class="form-label">PassWord확인 *</label> <input
+									type="text" id="memberPw" value="${vo.memberPassword }"
+									required="required" placeholder="비밀번호 한번 더 입력">
 							</div>
 							<span class="select2-selection__arrow" role="presentation"><b
 								role="presentation"></b></span><span class="dropdown-wrapper"
@@ -126,9 +130,8 @@ body {
 								<div class="col-lg-6">
 									<div class="mb-3">
 										<label class="form-label"></label> <select
-											class="select2 form-control select2-hidden-accessible"
-											data-select2-id="select2-data-1-gy14" tabindex="-1"
-											aria-hidden="true" style="margin-top: 28px">
+											class="select2 form-control select2-hidden-accessible" 
+											aria-hidden="true">
 											<option data-select2-id="select2-data-3-ibs9"></option>
 											<option value="">@ naver.com</option>
 											<option value="">@ hanmail.net</option>
@@ -173,7 +176,22 @@ body {
 									<span class="select2-selection__arrow" role="presentation"><b
 										role="presentation"></b></span><span class="dropdown-wrapper"
 										aria-hidden="true"></span>
+
+									<div>
+										<input type="hidden" id="memberId" name="memberId"
+											value="${vo.memberId}"> <input type="submit"
+											value="수정">&nbsp;&nbsp; <input type="reset"
+											value="리셋">
+
+									</div>
 				</form>
+				<script type="text/javascript">
+					function selectmember(id) {
+						document.getElementById("id").value = id
+						frm.submit();
+					}
+				</script>
+
 			</div>
 
 
@@ -189,23 +207,17 @@ body {
 		<div>
 			<p>
 				<button class="btn btn-primary btn-sm btn-icon-text"
-					onclick="location.href='cart.do'">
-					<i class="bi bi-save"></i><span class="text">Save</span>
+					onclick="location.href='memberUpdate.do'">
+					<i class="bi bi-save"></i><span class="text">수정하기</span>
 				</button>
 				<button class="btn btn-light btn-sm btn-icon-text">
-					<i class="bi bi-x"></i> <span class="text">Cancel</span>
+					<i class="bi bi-x"></i> <span class="text">취소</span>
 				</button>
 		</div>
 	</div>
 	</div>
 
 	</div>
-
-	</div>
-
-	</div>
-
-
 
 
 	<script type="text/javascript"></script>

@@ -22,9 +22,19 @@ public class MemberUpdate implements Command {
 				vo.setMemberAddress(request.getParameter("memberAddress"));
 				vo.setMemberEmail(request.getParameter("memberEmail"));
 				vo.setMemberTel(request.getParameter("memberTel"));
-								
-				dao.memberUpdate(vo);
-				return "member/memberSelectList";
+				
+				int n = dao.memberUpdate(vo);
+				
+				String  viewPage = "myPage/myError";
+				
+				if(n!=0) {
+					request.setAttribute("vo", vo);
+					viewPage = "myPage/myInfo";
+				}else {
+					request.setAttribute("message", "데이터가 수정되지 않았습니다.");
+				}
+				
+				return viewPage;
 	}
 
 }

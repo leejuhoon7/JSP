@@ -23,6 +23,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<package name="co.jtrip.mapper"/>
+		<package name="co.jtrip.mybatis.mapper"/>
 	</mappers>
 </configuration>
