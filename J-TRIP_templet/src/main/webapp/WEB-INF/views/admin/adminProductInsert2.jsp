@@ -1,267 +1,140 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta charset="utf-8">
+<!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
+<!--  All snippets are MIT license http://bootdey.com/license -->
+<title>Create new customer form - Bootdey.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+body {
+	background: #eee;
+}
+
+.col-lg-8{
+margin-right: auto;
+margin-left: auto;
+width: 1200px;
+}
+
+
+
+.card {
+	box-shadow: 0 20px 27px 0 rgb(0 0 0/ 5%);
+}
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border: 0 solid rgba(0, 0, 0, .125);
+	border-radius: 1rem;
+}
+
+.card-body {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	padding: 1.5rem 1.5rem;
+}
+
+</style>
+
 </head>
 <body>
+	<div class="container-fluid" style="margin-top: 100px">
 
-	  <section class="hero-wrap" style="background-image: url('images/destination-single.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-start">
-          <div class="col-md-9 ftco-animate pb-4">
-            <h1 class="mb-3 bread">패키지명 적기</h1>
-            <p><a href="#" class="btn btn-primary py-2 px-4">Book this tour</a> <a href="#" class="btn btn-black py-2 px-4">Watch Video</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
+		<div class="container">
+			<!-- Title -->
+			<div
+				class="d-flex justify-content-between align-items-lg-center py-3 flex-column flex-lg-row">
+				<h1 class="h5 mb-3 mb-lg-0" style="font-weight: bold; margin-left:auto; margin-right: auto;">
+					<a href="../../pages/admin/customers.html" class="text-muted"><i
+						class="bi bi-arrow-left-square me-2"></i></a> Product Registration
+				</h1>
+				
+			</div>
 
-    <section class="ftco-section ftco-services-2 ftco-no-pt">
-    	<div class="container-fluid px-0 bg-light">
-    		<div class="container">
-    			<div class="row tour py-5">
-        	<div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services text-center d-block">
-              <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-alarm-clock"></span></div>
-              <div class="media-body"> <!--일자-->
-                <h3 class="heading mb-3">5 Days</h3>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services text-center d-block">
-              <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-manager"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Age 12+</h3>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services text-center d-block">
-              <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-calendar"></span></div>
-              <div class="media-body"> <!---->
-                <h3 class="heading mb-3">April, May, June</h3>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services text-center d-block">
-              <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-layers"></span></div>
-              <div class="media-body"><!--일자-->
-                <h3 class="heading mb-3">Availability 30</h3>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services text-center d-block">
-              <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-wallet"></span></div>
-              <div class="media-body"><!--가격-->
-                <h3 class="heading mb-3"><span>$500</span> $400</h3>
-              </div>
-            </div>      
-          </div>
-        </div>
-    		</div>
-    	</div>
-      <div class="container">
-        <div class="row">
-        	<div class="col-md-12 tour-wrap mb-5">
-    				<div class="row">
-    					<div class="col-md-6 d-flex ftco-animate">
-    						<div class="img align-self-stretch" style="background-image: url(images/destination-1.jpg);"></div>
-    					</div>
-    					<div class="col-md-6 ftco-animate">
-    						<div class="text py-5">
-    							<h3><a href="#">경주...가보자고...</a></h3>
-    							<p class="pos">from <span class="price">$400.00</span>5 days</p>
-    							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-    							<p><a href="#" class="btn btn-secondary">Details</a> <a href="cart.do" class="btn btn-primary">Book now</a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			
-    			<!-- 여행일정수정 -->
-    			
-    			<div class="col-md-12 tour-wrap">
-    				<div class="day-wrap">
-    					<h3 class="pl-5">Day 1</h3>
-    					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-    					<!-- 이미지 넣고 싶으면 하나씩 넣으면 돼유 -->
-    				</div>
-    			</div>
-    			<div class="col-md-12 tour-wrap">
-    				<div class="day-wrap">
-    					<h3 class="pl-5">Day 2</h3>
-    					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-    				</div>
-    			</div>
-    			<div class="col-md-12 tour-wrap">
-    				<div class="day-wrap">
-    					<h3 class="pl-5">Day 3</h3>
-    					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-    				</div>
-    			</div>
-    			<div class="col-md-12 tour-wrap">
-    				<div class="day-wrap">
-    					<h3 class="pl-5">Day 4</h3>
-    					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-    				</div>
-    			</div>
-    			<div class="col-md-12 tour-wrap">
-    				<div class="day-wrap">
-    					<h3 class="pl-5">Day 5</h3>
-    					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-    				</div>
-    			</div>
-    			<div class="col-md-12 tour-wrap">
-    				<p><a href="#" class="btn btn-primary py-3 px-4">Book this tour</a> <a href="#" class="btn btn-secondary py-3 px-4">Share this tour</a></p>
-    			</div>
-    			<div class="col-md-12 tour-wrap">
-    				<table class="table">
-					    <tbody>
-					      <tr>
-				      	  <th scope="row">Departure</th>
-					        <td>
-					        	<p>Greece International Airport</p>
-					        </td>
-					        <td></td>
-					      </tr><!-- END TR-->
+			<!-- Main content -->
 
-					      <tr>
-				      	  <th scope="row">Departure Time</th>
-					        <td>
-					        	<p>Please arrive by 10:20 AM for a prompt departure at 10:50 AM</p>
-					        </td>
-					        <td></td>
-					      </tr><!-- END TR-->
+				<!-- Left side -->
+				<div class="col-lg-8" >
+					<!-- Address -->
+					<div class="card mb-4"  >
+						<div class="card-body" style="padding: 0px -150px" >
+							<h3 class="h6 mb-4"></h3>
+							<div class="mb-3">
+								<label class="form-label">Product No</label> <input
+									type="text" class="form-control">
+							</div>
+							<span class="select2-selection__arrow" role="presentation"><b
+								role="presentation"></b></span><span class="dropdown-wrapper"
+								aria-hidden="true"></span>
+							<div class="mb-3" style="margin-bottom: 50px">
+								<label class="form-label">Product Name</label> <input
+									type="text" class="form-control">
+							</div>
+							<span class="select2-selection__arrow" role="presentation"><b
+								role="presentation"></b></span><span class="dropdown-wrapper"
+								aria-hidden="true"></span>
+								<div class="mb-3" style="margin-bottom: 50px">
+								<label class="form-label">Product Price</label> <input
+									type="text" class="form-control">
+							</div>
+							<span class="select2-selection__arrow" role="presentation"><b
+								role="presentation"></b></span><span class="dropdown-wrapper"
+								aria-hidden="true"></span>
+								<div class="mb-3" style="margin-bottom: 50px">
+								<label class="form-label">Product Image</label> <input
+									type="file" class="form-control">
+									<input
+									type="file" class="form-control">
+							</div>
+							<span class="select2-selection__arrow" role="presentation"><b
+								role="presentation"></b></span><span class="dropdown-wrapper"
+								aria-hidden="true"></span>
+								
 
-					      <tr>
-				      	  <th scope="row">Return Time</th>
-					        <td>
-					        	<p>Approximately 8:30 PM</p>
-					        </td>
-					        <td></td>
-					      </tr><!-- END TR-->
-
-					      <tr>
-				      	  <th scope="row">Included</th>
-					        <td class="d-flex">
-					        	<ul>
-					        		<li>Airfare</li>
-					        		<li>5 star accomodation</li>
-					        	</ul>
-					        	<ul>
-					        		<li>Local transportation</li>
-					        		<li>Private Professional Guide</li>
-					        	</ul>
-					        </td>
-					        <td></td>
-					      </tr><!-- END TR-->
-
-					      <tr>
-				      	  <th scope="row">Not Included</th>
-					        <td class="d-flex">
-					        	<ul>
-					        		<li>Departure Taxes</li>
-					        	</ul>
-					        	<ul>
-					        		<li>Entry Fees</li>
-					        	</ul>
-					        </td>
-					        <td></td>
-					      </tr><!-- END TR-->
-					      
-					    </tbody>
-					  </table>
-    			</div>
-    			
-    			<!-- 리뷰 부분... 뺄까 말까? -->
-    			<div class="col-md-12 tour-wrap">
-    				<div class="pt-5 mt-5">
-              <h3 class="mb-5">6 Reviews</h3>
-              <ul class="comment-list">
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>John Doe</h3>
-                    <div class="meta">October 03, 2018 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-                </li>
-
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>John Doe</h3>
-                    <div class="meta">October 03, 2018 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-
-                  <ul class="children">
-                    <li class="comment">
-                      <div class="vcard bio">
-                        <img src="images/person_1.jpg" alt="Image placeholder">
-                      </div>
-                      <div class="comment-body">
-                        <h3>John Doe</h3>
-                        <div class="meta">October 03, 2018 at 2:21pm</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                        <p><a href="#" class="reply">Reply</a></p>
-                      </div>
+						</div>
 
 
-                      <ul class="children">
-                        <li class="comment">
-                          <div class="vcard bio">
-                            <img src="images/person_1.jpg" alt="Image placeholder">
-                          </div>
-                          <div class="comment-body">
-                            <h3>John Doe</h3>
-                            <div class="meta">October 03, 2018 at 2:21pm</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                            <p><a href="#" class="reply">Reply</a></p>
-                          </div>
 
-                            <ul class="children">
-                              <li class="comment">
-                                <div class="vcard bio">
-                                  <img src="images/person_1.jpg" alt="Image placeholder">
-                                </div>
-                                <div class="comment-body">
-                                  <h3>John Doe</h3>
-                                  <div class="meta">October 03, 2018 at 2:21pm</div>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                  <p><a href="#" class="reply">Reply</a></p>
-                                </div>
-                              </li>
-                            </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
+					</div>
+					
+					<div id="btn-save" style=" margin-left:250px; ">
+				<div >
+				<p>					
+					<button class="btn btn-primary btn-sm btn-icon-text"
+						onclick="location.href='cart.do'">
+						<i class="bi bi-save"></i><span class="text">Save</span>
+					</button>
+					<button class="btn btn-light btn-sm btn-icon-text">
+						<i class="bi bi-x"></i> <span class="text">Cancel</span>
+					</button>
+					</div>
+				</div>
+				</div>
+		
+		</div>
+		
+	</div>
+	
 
-                
-              </ul>
-              <!-- END comment-list -->
-              
-          
-            </div>
-    			</div>
-        </div>
-      </div>
-    </section> <!-- .section -->
+	
+
+	
+
+	<script type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

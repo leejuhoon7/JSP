@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.prj.mypage.mapper.MemberMapper">
+
+	<select id="memberSelect"
+		resultType="co.micol.prj.mypage.service.MemberVO">
+		SELECT MEMBER_ID, MEMBER_PASSWORD, MEMBER_NAME, MEMBER_TEL
+		FROM MEMBER
+		WHERE MEMBER_ID = #{memberId};
+
+	</select>
+
+	<update id="memberUpdate"
+		parameterType="co.micol.prj.mypage.service.MemberVO">
+
+		update member
+		set 
+		member_password = #{memberPassword},
+		member_name = #{memberName},
+		member_tel = #{memberTel}
+		where member_id = #{memberId};
+	</update>
+
+</mapper>

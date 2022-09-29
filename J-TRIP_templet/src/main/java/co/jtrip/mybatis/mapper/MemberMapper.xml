@@ -38,8 +38,17 @@
 		MEMBER_TEL = #{memberTel}
 
 		WHERE
-		MEMBER_ID = #{memberId}
+		MEMBER_ID =
+		#{memberId}
 	</update>
+
+	<select id="isIdCheck" resultType="boolean">
+		SELECT CASE WHEN
+		COUNT(MEMBER_ID) > 0 THEN 0 ELSE 1 END AS ID
+		FROM MEMBER
+		WHERE MEMBER_ID
+		= #{id}
+	</select>
 
 
 

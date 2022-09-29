@@ -14,6 +14,6 @@ public interface MemberService {
 
 	int memberDelete(MemberVO vo); // 데이터 삭제
 
-	boolean isMemberId(String id); // 아이디 중복 체크.
+	boolean isIdCheck(String id); // 아이디 중복 체크.
 
 }

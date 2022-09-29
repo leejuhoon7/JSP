@@ -16,19 +16,30 @@ public class MemberInsert implements Command {
 
 		MemberService dao = new MemberServiceImpl();
 		MemberVO vo = new MemberVO();
+		String fullEmail = "";
+		fullEmail += request.getParameter("emailId");
+		fullEmail += request.getParameter("textEmail");
+
 		vo.setMemberId(request.getParameter("memberId"));
 		vo.setMemberPassword(request.getParameter("memberPassword"));
 		vo.setMemberName(request.getParameter("memberName"));
 		vo.setMemberName(request.getParameter("memberAddress"));
+		vo.setMemberEmail(fullEmail);
 		vo.setMemberName(request.getParameter("memberEmail"));
 		vo.setMemberTel(request.getParameter("memberTel"));
 		vo.setMemberAuthor(request.getParameter("memberAuthor"));
 		vo.setMemberAuthor(request.getParameter("memberFavorite"));
-		
-		return  "main.do";
+
+		String viewPage = null;
+
+		if (dao.memberInsert(vo) != 0) {
+			request.setAttribute("message", "정상적으로 회원가입이 완료되었습니다.");
+			viewPage = "home.do";
+		} else {
+			request.setAttribute("message", "회원가입 실패");
+			viewPage = "member/memberMessage";
+		}
+
+		return viewPage;
 	}
 }
-
-
-
-

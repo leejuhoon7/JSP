@@ -78,11 +78,14 @@ body {
 			</div>
 
 			<!-- Main content -->
+			<form id="update" action="myInfo.do" method="post">
+			
+			<input type="hidden" id="memberId" name="memberId" value="${vo.memberId}">
+			
+				<!-- Left side -->
+				<div class="col-lg-8">
+					<!-- Address -->
 
-			<!-- Left side -->
-			<div class="col-lg-8">
-				<!-- Address -->
-				<form id="update" action="memberUpdate.do" method="post">
 					<div class="card mb-4">
 						<div class="card-body" style="padding: 0px -150px">
 							<h3 class="h6 mb-4"></h3>
@@ -90,7 +93,7 @@ body {
 
 
 								<label class="form-label">USER ID *</label> <input type="text"
-									id="memberId" value="${vo.memberId}" required="required">
+									id="memberId" name = "memberId" value="${vo.memberId}" required="required">
 
 
 							</div>
@@ -99,18 +102,18 @@ body {
 								aria-hidden="true"></span>
 							<div class="mb-3" style="margin-bottom: 50px">
 								<label class="form-label">NAME *</label> <input type="text"
-									id="memberName" value="${vo.memberName}" required="required">
+									id="memberName" name = " memberName" value="${vo.memberName}" required="required">
 							</div>
-							
+
 							<div class="mb-3" style="margin-bottom: 50px">
-								<label class="form-label">PassWord *</label> <input
-									type="text" id="memberPw" value="${vo.memberPassword }"
-									required="required" placeholder="비밀번호 입력">
+								<label class="form-label">PassWord *</label> <input type="text"
+									id="memberPassword" name = "memberPassword" value="${vo.memberPassword }" required="required"
+									placeholder="비밀번호 입력">
 							</div>
 
 							<div class="mb-3" style="margin-bottom: 50px">
 								<label class="form-label">PassWord확인 *</label> <input
-									type="text" id="memberPw" value="${vo.memberPassword }"
+									type="text" id="memberPassword" name = "memberPassword" value="${vo.memberPassword }"
 									required="required" placeholder="비밀번호 한번 더 입력">
 							</div>
 							<span class="select2-selection__arrow" role="presentation"><b
@@ -121,7 +124,7 @@ body {
 								<div class="card-body">
 									<div class="mb-3">
 										<label class="form-label">E-mail *</label> <input type="text"
-											id="memberEmail" value="${vo.memberEmail}"
+											id="memberEmail" name = "memberEmail" value="${vo.memberEmail}"
 											required="required">
 									</div>
 
@@ -130,7 +133,7 @@ body {
 								<div class="col-lg-6">
 									<div class="mb-3">
 										<label class="form-label"></label> <select
-											class="select2 form-control select2-hidden-accessible" 
+											class="select2 form-control select2-hidden-accessible"
 											aria-hidden="true">
 											<option data-select2-id="select2-data-3-ibs9"></option>
 											<option value="">@ naver.com</option>
@@ -163,7 +166,7 @@ body {
 									<h3 class="h6 mb-4"></h3>
 									<div class="mb-3">
 										<label class="form-label">Address *</label> <input type="text"
-											id="memberAdd" value="${vo.memberAddress}"
+											id="memberAddress" name = "memberAddress" value="${vo.memberAddress}"
 											required="required">
 									</div>
 									<span class="select2-selection__arrow" role="presentation"><b
@@ -171,34 +174,20 @@ body {
 										aria-hidden="true"></span>
 									<div class="mb-3" style="margin-bottom: 50px">
 										<label class="form-label">Tel*</label> <input type="text"
-											id="memberTel" value="${vo.memberTel}" required="required">
+											id="memberTel" name = "memberTel" value="${vo.memberTel}" required="required">
 									</div>
 									<span class="select2-selection__arrow" role="presentation"><b
 										role="presentation"></b></span><span class="dropdown-wrapper"
 										aria-hidden="true"></span>
+			</form>
 
-									<div>
-										<input type="hidden" id="memberId" name="memberId"
-											value="${vo.memberId}"> <input type="submit"
-											value="수정">&nbsp;&nbsp; <input type="reset"
-											value="리셋">
-
-									</div>
-				</form>
-				<script type="text/javascript">
-					function selectmember(id) {
-						document.getElementById("id").value = id
-						frm.submit();
-					}
-				</script>
-
-			</div>
-
-
-
-			<!-- 이 안에 다 넣어야함 -->
 		</div>
-		<div></div>
+
+
+
+		<!-- 이 안에 다 넣어야함 -->
+	</div>
+	<div></div>
 	</div>
 
 	</div>
@@ -207,7 +196,7 @@ body {
 		<div>
 			<p>
 				<button class="btn btn-primary btn-sm btn-icon-text"
-					onclick="location.href='memberUpdate.do'">
+					onclick="location.href='myInfo.do'">
 					<i class="bi bi-save"></i><span class="text">수정하기</span>
 				</button>
 				<button class="btn btn-light btn-sm btn-icon-text">
@@ -218,7 +207,6 @@ body {
 	</div>
 
 	</div>
-
 
 	<script type="text/javascript"></script>
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

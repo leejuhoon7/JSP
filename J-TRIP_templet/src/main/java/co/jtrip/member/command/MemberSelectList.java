@@ -21,7 +21,7 @@ public class MemberSelectList implements Command {
 		list = dao.memberSelectList();
 		
 		request.setAttribute("members", list);
-		return "member/memberSelectList";
+		return "myPage/myInfo";
 	}
 
 }

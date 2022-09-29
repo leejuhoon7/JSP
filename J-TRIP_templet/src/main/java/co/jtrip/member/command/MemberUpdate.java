@@ -29,7 +29,7 @@ public class MemberUpdate implements Command {
 				
 				if(n!=0) {
 					request.setAttribute("vo", vo);
-					viewPage = "myPage/myInfo";
+					viewPage = "myPage/MemberUpdate";
 				}else {
 					request.setAttribute("message", "데이터가 수정되지 않았습니다.");
 				}

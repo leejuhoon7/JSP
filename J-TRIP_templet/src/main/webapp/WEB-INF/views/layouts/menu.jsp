@@ -60,11 +60,11 @@ margin-bottom: 30px;
 	           <li class="nav-item"><a href="reviewBusan.do" class="nav-link"><span>Review</span></a></li>
 	          <li class="nav-item"><a href="qna.do" class="nav-link"><span>Custom Center</span></a></li>
 	          
-	          <li class="nav-item"><a href="login.do" class="nav-link"><span>Login</span></a></li>
+	          <li class="nav-item"><a href="memberLogin.do" class="nav-link"><span>Login</span></a></li>
 	          
-	          <li class="nav-item"><a href="myPageMain.do" class="nav-link"><span>MyPage</span></a></li>
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>MyPage</span></a></li>
 	          <li class="nav-item"><a href="cart.do" class="nav-link"><span>Cart</span></a></li>
-	             <li class="nav-item"><a href="logout.do" class="nav-link"><span>Logout</span></a></li>
+	             <li class="nav-item"><a href="memberLogout.do" class="nav-link"><span>Logout</span></a></li>
 	             <li class="nav-item"><a href="adminProduct.do" class="nav-link"><span>Admin</span></a></li>
 	        </ul>
 	      </div>

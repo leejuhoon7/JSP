@@ -43,11 +43,7 @@
 						</tr>
 					</table>
 				</div><br>
-				<div>
-					<input type="hidden" id="memberId" name="memberId" value="${vo.memberId}">
-					<input type="submit" value="수정">&nbsp;&nbsp;
-					<input type="reset" value="리셋">
-				</div>
+				
 			</form>
 		</div>
 	</div>

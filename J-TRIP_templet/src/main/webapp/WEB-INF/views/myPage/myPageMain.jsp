@@ -53,7 +53,7 @@ body {
           MyPage
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="myInfo.do">My Information</a>
+          <a class="dropdown-item" href="myInfoForm.do">My Information</a>
           <a class="dropdown-item" href="myReviewList.do">My Review List</a>
           <a class="dropdown-item" href="myQnAList.do">My QnA List</a>
           <div class="dropdown-divider"></div>
