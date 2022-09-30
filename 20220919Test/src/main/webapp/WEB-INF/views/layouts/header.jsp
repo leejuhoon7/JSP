@@ -15,7 +15,7 @@
 			<li><a class="menuLink" href="noticeSelectList.do">Notice</a></li>
 			<li><a class="menuLink" href="#">Join</a></li>
 			<li><a class="menuLink" href="memberEditForm.do">Member</a></li>
-			<li><a class="menuLink" href="#">Content</a></li>
+			<li><a class="menuLink" href="memberSelectList.do">회원탈퇴</a></li>
 			<c:choose>
 				<c:when test="${empty id}">
 					<li><a class="menuLink" href="memberLoginForm.do">login</a></li>

@@ -1,31 +1,28 @@
 package co.micol.prj.mypage.command;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import co.micol.prj.common.Command;
 import co.micol.prj.mypage.service.MemberService;
 import co.micol.prj.mypage.service.MemberVO;
 import co.micol.prj.mypage.serviceimpl.MemberServiceImpl;
 
-public class MemberEditForm implements Command{
+public class MemberSelectList implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		
-		HttpSession session = request.getSession();
-		String a = (String)session.getAttribute("id");
-		
 		MemberService dao = new MemberServiceImpl();
-		MemberVO vo = new MemberVO();
+		List<MemberVO> list = new ArrayList<>();
+		list = dao.memberSelectList();
 		
-		vo.setMemberId(a);
+		request.setAttribute("members", list);
 		
-		MemberVO resultVO = dao.memberSelect(vo);
-		request.setAttribute("vo", resultVO);
-			
-		return "myPage/memberEditForm";
+		return "myPage/memberSelectList";
 	}
-	
+
 }

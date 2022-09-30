@@ -142,7 +142,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memberSelectList.do", new MemberSelectList()); // 마이페이지 정보불러오기
 		map.put("/memberInsert.do", new MemberInsert()); // 마이페이지 정보추가
 		map.put("/memberUpdate.do", new MemberUpdate()); // 마이페이지 정보수정
-		map.put("/memberUpdateForm.do", new MemberUpdateForm()); // 마이페이지 정보수정
+		map.put("/memberUpdateForm.do", new MemberUpdateForm()); // 마이페이지 정보수정폼
 		map.put("/qnaSelectList.do", new QNASelectList());
 		map.put("/qnaSelect.do", new QNASelect());
 		map.put("/reviewSelectList.do", new ReviewSelectList());

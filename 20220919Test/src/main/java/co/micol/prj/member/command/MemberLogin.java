@@ -5,22 +5,26 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import co.micol.prj.common.Command;
-import co.micol.prj.member.service.MemberService;
-import co.micol.prj.member.service.MemberVO;
-import co.micol.prj.member.serviceImpl.MemberServiceImpl;
+import co.micol.prj.mypage.service.MemberService;
+import co.micol.prj.mypage.service.MemberVO;
+import co.micol.prj.mypage.serviceimpl.MemberServiceImpl;
 
 public class MemberLogin implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
+	
 		HttpSession session = request.getSession(); // 세션을 불러온다.
 		
 		MemberService dao = new MemberServiceImpl();
+		
 		MemberVO vo = new MemberVO();
+		
+		
 		vo.setMemberId(request.getParameter("memberId"));
 		vo.setMemberPassword(request.getParameter("memberPassword"));
-		
 		MemberVO resultVO = dao.memberSelect(vo);
+		
 		
 		if (resultVO != null) {
 			// 성공하면 세션처리 하고

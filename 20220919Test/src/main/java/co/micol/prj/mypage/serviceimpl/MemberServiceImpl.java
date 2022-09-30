@@ -1,5 +1,7 @@
 package co.micol.prj.mypage.serviceimpl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import co.micol.prj.common.DataSource;
@@ -20,6 +22,21 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int memberUpdate(MemberVO vo) {
 		return map.memberUpdate(vo);
+	}
+	@Override
+	public List<MemberVO> memberSelectList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public int memberInsert(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public int memberDelete(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	
