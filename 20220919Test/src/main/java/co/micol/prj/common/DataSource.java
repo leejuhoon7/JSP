@@ -21,7 +21,7 @@ public class DataSource {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+ System.out.println("data source conn");
 		return sqlSessionFactory;
 	}
 

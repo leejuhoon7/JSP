@@ -16,7 +16,9 @@ import co.micol.prj.common.Command;
 import co.micol.prj.member.command.MemberLogin;
 import co.micol.prj.member.command.MemberLoginForm;
 import co.micol.prj.member.command.MemberLogout;
+import co.micol.prj.member.command.MemberSelect;
 import co.micol.prj.mypage.command.MemberEdit;
+import co.micol.prj.mypage.command.MemberEditForm;
 import co.micol.prj.notice.command.NoticeDelete;
 import co.micol.prj.notice.command.NoticeEdit;
 import co.micol.prj.notice.command.NoticeEditForm;
@@ -50,6 +52,8 @@ public class FrontController extends HttpServlet {
 		// 0929 은경이 숙제!!
 		
 		map.put("/memberEdit.do", new MemberEdit()); // 수정
+		map.put("/memberEditForm.do", new MemberEditForm());
+		map.put("/memberSelect.do", new MemberSelect());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -73,6 +77,7 @@ public class FrontController extends HttpServlet {
 				if (viewPage .startsWith("no:")) {
 					viewPage = "/WEB-INF/views/" + viewPage.substring(3) + ".jsp";
 				} else { // tiles  적용태울때
+					System.out.println(viewPage);
 					viewPage = viewPage + ".tiles";  // tiles layout 사용
 				}
 				

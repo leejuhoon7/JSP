@@ -6,7 +6,7 @@
 		resultType="co.micol.prj.mypage.service.MemberVO">
 		SELECT MEMBER_ID, MEMBER_PASSWORD, MEMBER_NAME, MEMBER_TEL
 		FROM MEMBER
-		WHERE MEMBER_ID = #{memberId};
+		WHERE MEMBER_ID = #{memberId}
 
 	</select>
 
@@ -18,7 +18,7 @@
 		member_password = #{memberPassword},
 		member_name = #{memberName},
 		member_tel = #{memberTel}
-		where member_id = #{memberId};
+		where member_id = #{memberId}
 	</update>
 
 </mapper>

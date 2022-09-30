@@ -14,7 +14,7 @@
 			<li><a class="menuLink" href="main.do">Home</a></li>
 			<li><a class="menuLink" href="noticeSelectList.do">Notice</a></li>
 			<li><a class="menuLink" href="#">Join</a></li>
-			<li><a class="menuLink" href="#">Member</a></li>
+			<li><a class="menuLink" href="memberEditForm.do">Member</a></li>
 			<li><a class="menuLink" href="#">Content</a></li>
 			<c:choose>
 				<c:when test="${empty id}">
